@@ -1,0 +1,54 @@
+﻿@model MVCTASK.Models.Student
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>@StudentTask.Languages.Resource.Edit</h1>
+
+<h4>@StudentTask.Languages.Resource.Student</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Sname" class="control-label">@StudentTask.Languages.Resource.Name</label>
+                <input asp-for="Sname" class="form-control" />
+                <span asp-validation-for="Sname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gender" class="control-label">@StudentTask.Languages.Resource.Gender</label>
+                <input asp-for="Gender" class="form-control" />
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dateofbirth" class="control-label">@StudentTask.Languages.Resource.DateOfBirth</label>
+                <input asp-for="Dateofbirth" class="form-control" />
+                <span asp-validation-for="Dateofbirth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="City" class="control-label">@StudentTask.Languages.Resource.City</label>
+                <input asp-for="City" class="form-control" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IsEnrolled" class="control-label">@StudentTask.Languages.Resource.IsEnrolled</label>
+                <input asp-for="IsEnrolled" class="form-control" />
+                <span asp-validation-for="IsEnrolled" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value=@StudentTask.Languages.Resource.save class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">@StudentTask.Languages.Resource.Back</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

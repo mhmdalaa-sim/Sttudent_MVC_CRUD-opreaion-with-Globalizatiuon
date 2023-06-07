@@ -1,0 +1,51 @@
+﻿@model MVCTASK.Models.Student
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>@StudentTask.Languages.Resource.Delete</h1>
+
+<h3>@StudentTask.Languages.Resource.AreYouSure</h3>
+<div>
+    <h4>@StudentTask.Languages.Resource.Student</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @StudentTask.Languages.Resource.Name
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Sname)
+        </dd>
+        <dt class = "col-sm-2">
+            @StudentTask.Languages.Resource.Gender
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+        <dt class = "col-sm-2">
+            @StudentTask.Languages.Resource.DateOfBirth
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Dateofbirth)
+        </dd>
+        <dt class = "col-sm-2">
+            @StudentTask.Languages.Resource.City
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.City)
+        </dd>
+        <dt class = "col-sm-2">
+            @StudentTask.Languages.Resource.IsEnrolled
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IsEnrolled)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value=@StudentTask.Languages.Resource.Delete class="btn btn-danger" /> |
+        <a asp-action="Index">@StudentTask.Languages.Resource.Back</a>
+    </form>
+</div>
